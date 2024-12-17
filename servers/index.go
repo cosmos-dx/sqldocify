@@ -37,13 +37,6 @@ func NewDatabase(dbtype, config string) (*configs.Database, error) {
 	return &configs.Database{DBServer: dbServer}, nil
 }
 
-//Function for check table exists or not if not in database and if its in metadata then create the table with the available schema
-/*
-1. Load all the tables name from the file
-2. Run for all the table names and check if they exists in db or not
-3. If not then create the table with the available metadata
-*/
-
 func InitialTablesCheck(db *configs.Database) error {
 	metaTables := configs.GetMetaTableInstance()
 	tableSpec, err := table.AddSelectedDB()
