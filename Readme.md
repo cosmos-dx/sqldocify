@@ -101,4 +101,4 @@ type ITableSpec interface {
 We have a scope to correct our errors and make this library more useful and scalable.
 This needs your help and we will be really thankful if you contribute and help us to make this library more robust. 
 
-Contribution guidelines link - https://github.com/cosmos-dx/sqldocify/contribution-guidelines.md
+Contribution guidelines link - https://github.com/cosmos-dx/sqldocify/blob/main/contribution-guidelines.md
