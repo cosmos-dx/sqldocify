@@ -1,1 +1,146 @@
-{}
+{
+  "abc": {
+    "schema": {
+      "email": {
+        "Type": "varchar(255)",
+        "Null": "NO",
+        "Key": "UNI",
+        "Extra": ""
+      },
+      "id": {
+        "Type": "int",
+        "Null": "NO",
+        "Key": "PRI",
+        "Extra": "auto_increment"
+      },
+      "password": {
+        "Type": "varchar(255)",
+        "Null": "NO",
+        "Key": "",
+        "Extra": ""
+      },
+      "status": {
+        "Type": "enum('active','inactive','banned')",
+        "Null": "NO",
+        "Key": "",
+        "Extra": ""
+      },
+      "username": {
+        "Type": "varchar(255)",
+        "Null": "NO",
+        "Key": "UNI",
+        "Extra": ""
+      }
+    },
+    "timestamp": "Timestamp",
+    "details": "Details"
+  },
+  "users": {
+    "schema": {
+      "email": {
+        "Type": "varchar(255)",
+        "Null": "NO",
+        "Key": "UNI",
+        "Extra": ""
+      },
+      "id": {
+        "Type": "int",
+        "Null": "NO",
+        "Key": "PRI",
+        "Extra": "auto_increment"
+      },
+      "password": {
+        "Type": "varchar(255)",
+        "Null": "NO",
+        "Key": "",
+        "Extra": ""
+      },
+      "status": {
+        "Type": "enum('active','inactive','banned')",
+        "Null": "NO",
+        "Key": "",
+        "Extra": ""
+      },
+      "username": {
+        "Type": "varchar(255)",
+        "Null": "NO",
+        "Key": "UNI",
+        "Extra": ""
+      }
+    },
+    "timestamp": "Timestamp",
+    "details": "Details"
+  },
+  "uwe": {
+    "schema": {
+      "email": {
+        "Type": "varchar(255)",
+        "Null": "NO",
+        "Key": "UNI",
+        "Extra": ""
+      },
+      "id": {
+        "Type": "int",
+        "Null": "NO",
+        "Key": "PRI",
+        "Extra": "auto_increment"
+      },
+      "password": {
+        "Type": "varchar(255)",
+        "Null": "NO",
+        "Key": "",
+        "Extra": ""
+      },
+      "status": {
+        "Type": "enum('active','inactive','banned')",
+        "Null": "NO",
+        "Key": "",
+        "Extra": ""
+      },
+      "username": {
+        "Type": "varchar(255)",
+        "Null": "NO",
+        "Key": "UNI",
+        "Extra": ""
+      }
+    },
+    "timestamp": "2024-12-17 19:49:30.401817 +0530 IST m=+0.071904601",
+    "details": "Details"
+  },
+  "xyz": {
+    "schema": {
+      "email": {
+        "Type": "varchar(255)",
+        "Null": "NO",
+        "Key": "UNI",
+        "Extra": ""
+      },
+      "id": {
+        "Type": "int",
+        "Null": "NO",
+        "Key": "PRI",
+        "Extra": "auto_increment"
+      },
+      "password": {
+        "Type": "varchar(255)",
+        "Null": "NO",
+        "Key": "",
+        "Extra": ""
+      },
+      "status": {
+        "Type": "enum('active','inactive','banned')",
+        "Null": "NO",
+        "Key": "",
+        "Extra": ""
+      },
+      "username": {
+        "Type": "varchar(255)",
+        "Null": "NO",
+        "Key": "UNI",
+        "Extra": ""
+      }
+    },
+    "timestamp": "Timestamp",
+    "details": "Details"
+  }
+}

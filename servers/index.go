@@ -33,7 +33,7 @@ func NewDatabase(dbtype, config string) (*configs.Database, error) {
 	}
 	table.AddSelectedDB()
 	configs.GetMetaTableInstance() //It will load all the data in the list
-
+	InitialTablesCheck(&configs.Database{DBServer: dbServer})
 	return &configs.Database{DBServer: dbServer}, nil
 }
 
@@ -58,7 +58,6 @@ func InitialTablesCheck(db *configs.Database) error {
 	for tableName := range metaTables.ExistingTables {
 		metatablearray = append(metatablearray, tableName)
 	}
-
 	tableExistsInArray := func(tableName string, tableArray []string) bool {
 		for _, name := range tableArray {
 			if name == tableName {
@@ -93,6 +92,7 @@ func InitialTablesCheck(db *configs.Database) error {
 				log.Printf("Failed to create table %s: %v", metaTable, err)
 				continue
 			}
+
 			log.Printf("Table %s was missing and has been created", metaTable)
 		}
 	}

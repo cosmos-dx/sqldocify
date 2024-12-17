@@ -8,12 +8,6 @@ import (
 	"sqldocify/table"
 )
 
-type DummyData struct {
-	tableName string
-	columns   []string
-	values    []interface{}
-}
-
 type FieldSchema struct {
 	Type  string `json:"Type"`
 	Null  string `json:"Null"`
@@ -67,10 +61,8 @@ func main() {
 			log.Printf("Failed to close the database connection: %v", err)
 		}
 	}()
-	// .CreateTables(db)
-	// table.TableExists("users", db)
 	tablespec, _ := table.AddSelectedDB()
-	tablespec.CreateTable(db.DB(), "abc", userTableSchema)
+	tablespec.CreateTable(db.DB(), "uwe", userTableSchema)
 	fmt.Println("Database connection established successfully!")
 
 	fmt.Println("Operations completed.")

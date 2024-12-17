@@ -6,6 +6,7 @@ import (
 	"log"
 	"sqldocify/configs"
 	"sqldocify/table/queries"
+	"time"
 )
 
 var QGType queries.QueryGenerator
@@ -40,9 +41,12 @@ func (t *TableSpec) GetMetaDataSchema(db *sql.DB, tname string) (map[string]conf
 	// return nil, nil
 }
 func (t *TableSpec) TableExists(nm string, db *sql.DB) bool {
-	// exsisting_tables := configs.GetTableListInstance()
-	// if()
+	metatables := configs.GetMetaTableInstance()
+	if metatables.FindMetaTable(nm) != nil {
+		return true
+	}
 	//check from metatables
+
 	tableExistsQuery := t.QGType.GenerateTableExistsQuery(nm)
 	if db == nil {
 		errors.New("No active database connection.")
@@ -57,6 +61,16 @@ func (t *TableSpec) CreateTable(db *sql.DB, nm string, schema map[string]configs
 		return errors.New("no active database connection")
 	}
 	_, err := db.Exec(createQuery)
+	metaTables := configs.GetMetaTableInstance()
+	if metaTables.FindMetaTable(nm) == nil {
+		println("Table not found in metadata")
+		metatabledetails := configs.MetaTableDetails{
+			Schema:    schema,
+			Timestamp: time.Now().String(),
+			Details:   "Details",
+		}
+		metaTables.UpdateMetaTable(nm, metatabledetails)
+	}
 	return err
 }
 
